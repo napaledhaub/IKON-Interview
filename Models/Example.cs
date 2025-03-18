@@ -8,7 +8,7 @@ namespace interview.Models
     {
         [Key]
         [Column("id")]
-        public int? id { get; set; }
+        public long? id { get; set; }
         [Column("name")]
         public string? name { get; set; }
     }

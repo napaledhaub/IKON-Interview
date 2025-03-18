@@ -60,7 +60,7 @@ namespace interview.Services
             }
         }
 
-        public async Task DeleteExample(int id)
+        public async Task DeleteExample(long id)
         {
             try
             {
@@ -93,8 +93,12 @@ namespace interview.Services
         {
             try
             {
-                _dbContext.Examples.Update(example);
-                await _dbContext.SaveChangesAsync();
+                var examp = await _dbContext.Examples.FindAsync(example.id);
+                if (examp != null)
+                {
+                    examp.name = example.name;
+                    await _dbContext.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {

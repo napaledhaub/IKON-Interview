@@ -48,7 +48,7 @@ namespace interview.Controllers
         }
 
         [HttpDelete("DeleteExample")]
-        public async Task<IActionResult> DeleteExample(int id)
+        public async Task<IActionResult> DeleteExample(long id)
         {
             await _placeholderService.DeleteExample(id);
             return Ok();

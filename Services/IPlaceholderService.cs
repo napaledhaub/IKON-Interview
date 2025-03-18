@@ -8,6 +8,6 @@ namespace interview.Services
         Task AddExample(Example example);
         Task<List<Example>> GetExample();
         Task UpdateExample(Example example);
-        Task DeleteExample(int id);
+        Task DeleteExample(long id);
     }
 }
