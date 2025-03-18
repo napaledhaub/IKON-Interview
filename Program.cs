@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 var conString = builder.Configuration.GetConnectionString("DatabaseConnection");
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(conString));
-builder.Services.Configure<APISettings>(builder.Configuration.GetSection("DogApiSettings"));
+builder.Services.Configure<APISettings>(builder.Configuration.GetSection("APISettings"));
 builder.Services.AddHttpClient<IPlaceholderService, PlaceholderService>();
 builder.Services.AddScoped<IPlaceholderService, PlaceholderService>();
 
